@@ -16,6 +16,7 @@ func getMd5(file string) []byte {
 	if err != nil {
 		panic(err)
 	}
+	defer f.Close()
 
 	bytes := make([]byte, 1024 * 10)
 	h := md5.New()
